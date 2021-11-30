@@ -132,6 +132,70 @@ main{
 
 }
 
+.comment-post-icon{
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/post/comment.svg");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 5px solid transparent;
+    
+
+}
+
+.loop-post-icon{
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/post/loop.svg");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 5px solid transparent;
+   
+
+}
+
+.like-post-icon{
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/post/heart.svg");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 5px solid transparent;
+   
+
+}
+
+.upload-post-icon{
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/post/upload.svg");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 5px solid transparent;
+  
+
+}
+
+.comment-post-icon:hover,
+.like-post-icon:hover,
+.loop-post-icon:hover,
+.upload-post-icon:hover{
+    background-color: var(--extra-light-grey);
+    border: 5px solid var(--extra-light-grey);
+    border-radius: 50%;
+    
+}
+
+/*END ICONS*/
+
 .tweet__button{
     position: relative;
     margin-top: 1rem;
@@ -202,4 +266,52 @@ form{
 ::placeholder{
     font-family: "Outfit";
     font-size: 1.2rem;
+}
+
+/*POST*/
+
+.post-container{
+    border: 1px solid var(--extra-light-grey);
+    height:auto;
+}
+
+.post-header-wrrapper{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.user__name{
+    position: relative;
+    margin-left: 1rem;
+    color: var(--main-black);
+    font-size: 1rem;
+    font-weight: bold;
+    top: -10px;
+}
+
+.posted__date{
+    position: relative;
+    top: -10px;
+    margin-left: 1rem;
+    color: var(--dark-grey);
+
+
+}
+
+.post-text-wrrapper{
+    position: relative;
+    width: calc(100% - 60px);
+    margin-left: 60px;
+
+}
+
+.post-interaction-wrrapper{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
 }
