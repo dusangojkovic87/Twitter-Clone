@@ -5,6 +5,12 @@ import mongoose from "mongoose";
 import session from 'express-session';
 import cookieParser from "cookie-parser";
 
+declare module 'express-session' {
+  interface SessionData {
+    isAuth: boolean;
+  }
+}
+
 const app = express();
 
 import HomeRoute from "./Routes/homeRoute";

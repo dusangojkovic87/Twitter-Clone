@@ -22,22 +22,21 @@ function getRegisterPage(req, res) {
 exports.getRegisterPage = getRegisterPage;
 function postRegister(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        const { name, surname, username, email, password } = req.body;
+        const { name, surname, email, password } = req.body;
         if (validator_1.default.isEmpty(name) ||
             validator_1.default.isEmpty(surname) ||
-            validator_1.default.isEmpty(username) ||
             validator_1.default.isEmpty(email) ||
             validator_1.default.isEmpty(password)) {
             res.render("register", { errorMessage: "Fields cannot be empty!" });
             return;
         }
         if (!validator_1.default.isEmail(email)) {
-            res.render('register', { errorMessage: 'Email is not valid!' });
+            res.render("register", { errorMessage: "Email is not valid!" });
             return;
         }
         let user = yield User_1.default.findOne({ email: email });
         if (user) {
-            res.render('register', { errorMessage: 'User already exists!' });
+            res.render("register", { errorMessage: "User already exists!" });
             return;
         }
         let salt = yield bcrypt_1.default.genSalt(10);
@@ -45,15 +44,17 @@ function postRegister(req, res) {
         let newUser = new User_1.default({
             name: name,
             surname: surname,
-            username: username,
             email: email,
-            password: hashedPass
+            password: hashedPass,
         });
-        newUser.save().then(() => {
-            res.redirect('login');
+        newUser
+            .save()
+            .then(() => {
+            res.redirect("login");
             return;
-        }).catch(() => {
-            res.render('register', { errorMessage: 'Error,user not saved!' });
+        })
+            .catch(() => {
+            res.render("register", { errorMessage: "Error,user not saved!" });
             return;
         });
     });

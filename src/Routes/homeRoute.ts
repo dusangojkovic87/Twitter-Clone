@@ -1,8 +1,9 @@
 import HomeController from '../Controllers/HomeController';
-import express,{Request,Response} from 'express';
+import express from 'express';
+import {isAuthenticated} from '../Middleware/AuthMiddleware';
 let router = express.Router();
 
-router.get('/',HomeController);
+router.get('/',isAuthenticated,HomeController);
 
 
 

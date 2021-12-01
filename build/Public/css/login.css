@@ -55,4 +55,17 @@ input{
     color: var(--dark-grey);
 }
 
+.validation-wrrapper{
+    position: relative;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.error__message{
+    color: var(--danger);
+}
+
 
