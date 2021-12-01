@@ -6,4 +6,5 @@ router.get('/',getRegisterPage);
 router.post('/',postRegister);
 
 
+
 export = router;

@@ -16,3 +16,4 @@ function logout(req, res) {
     }
 }
 exports.logout = logout;
+//# sourceMappingURL=LogoutController.js.map

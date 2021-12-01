@@ -11,3 +11,4 @@ function isAuthenticated(req, res, next) {
     }
 }
 exports.isAuthenticated = isAuthenticated;
+//# sourceMappingURL=AuthMiddleware.js.map

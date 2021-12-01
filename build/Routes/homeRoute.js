@@ -8,3 +8,4 @@ const AuthMiddleware_1 = require("../Middleware/AuthMiddleware");
 let router = express_1.default.Router();
 router.get('/', AuthMiddleware_1.isAuthenticated, HomeController_1.default);
 module.exports = router;
+//# sourceMappingURL=homeRoute.js.map

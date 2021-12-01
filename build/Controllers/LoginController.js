@@ -40,6 +40,7 @@ function postLogin(req, res) {
         let isMatch = yield bcrypt_1.default.compare(password, user.password);
         if (isMatch) {
             req.session.isAuth = true;
+            req.session.userId = user._id;
             res.redirect('/');
             return;
         }
@@ -51,3 +52,4 @@ function postLogin(req, res) {
     });
 }
 exports.postLogin = postLogin;
+//# sourceMappingURL=LoginController.js.map

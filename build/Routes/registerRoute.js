@@ -8,3 +8,4 @@ let router = express_1.default.Router();
 router.get('/', RegisterController_1.getRegisterPage);
 router.post('/', RegisterController_1.postRegister);
 module.exports = router;
+//# sourceMappingURL=registerRoute.js.map

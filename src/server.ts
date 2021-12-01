@@ -4,10 +4,12 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import session from 'express-session';
 import cookieParser from "cookie-parser";
+import cors from 'cors';
 
 declare module 'express-session' {
   interface SessionData {
     isAuth: boolean;
+    userId:String;
   }
 }
 
@@ -17,12 +19,18 @@ import HomeRoute from "./Routes/homeRoute";
 import LoginRoute from "./Routes/loginRoute";
 import RegisterRoute from "./Routes/registerRoute";
 import LogoutRoute from "./Routes/logoutRoute";
+import PostRoute from "./Routes/postRoute";
+
+  
+
+
 
 
 
 const PORT = 3000;
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
@@ -39,6 +47,7 @@ app.use("/", HomeRoute);
 app.use("/login", LoginRoute);
 app.use("/register", RegisterRoute);
 app.use("/logout", LogoutRoute);
+app.use("/post", PostRoute);
 
 
 

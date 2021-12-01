@@ -31,6 +31,7 @@ export async function postLogin(req:Request,res:Response){
      let isMatch = await bcrypt.compare(password,user.password);
      if(isMatch){
          req.session.isAuth = true;
+         req.session.userId = user._id;
          res.redirect('/');
          return;
      }else{

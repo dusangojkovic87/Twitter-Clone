@@ -7,3 +7,4 @@ let router = express_1.default.Router();
 const LogoutController_1 = require("../Controllers/LogoutController");
 router.get('/', LogoutController_1.logout);
 module.exports = router;
+//# sourceMappingURL=logoutRoute.js.map

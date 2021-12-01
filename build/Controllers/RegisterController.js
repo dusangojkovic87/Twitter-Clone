@@ -60,3 +60,4 @@ function postRegister(req, res) {
     });
 }
 exports.postRegister = postRegister;
+//# sourceMappingURL=RegisterController.js.map
