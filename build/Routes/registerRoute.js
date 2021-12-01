@@ -6,4 +6,5 @@ const express_1 = __importDefault(require("express"));
 const RegisterController_1 = require("../Controllers/RegisterController");
 let router = express_1.default.Router();
 router.get('/', RegisterController_1.getRegisterPage);
+router.post('/', RegisterController_1.postRegister);
 module.exports = router;

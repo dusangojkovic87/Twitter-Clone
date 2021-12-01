@@ -1,7 +1,7 @@
 .register-container{
     position: relative;
     width: 400px;
-    height: 500px;
+    height: 520px;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
@@ -43,4 +43,17 @@ input{
     font-size: 1rem;
     cursor: pointer;
     margin-top: 1rem;
+}
+
+.validation-wrrapper{
+    position: relative;
+    top: -20px;
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.error__message{
+    color: var(--danger);
 }
