@@ -16,6 +16,8 @@ const app = express();
 import HomeRoute from "./Routes/homeRoute";
 import LoginRoute from "./Routes/loginRoute";
 import RegisterRoute from "./Routes/registerRoute";
+import LogoutRoute from "./Routes/logoutRoute";
+
 
 
 const PORT = 3000;
@@ -32,9 +34,13 @@ app.use(session({secret:'secretkey',saveUninitialized:true,cookie:{maxAge:oneDay
 app.use(cookieParser());
 
 /*Routes*/
+
 app.use("/", HomeRoute);
 app.use("/login", LoginRoute);
 app.use("/register", RegisterRoute);
+app.use("/logout", LogoutRoute);
+
+
 
 /*db connection*/
 mongoose

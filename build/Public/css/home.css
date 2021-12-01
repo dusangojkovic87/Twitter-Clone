@@ -185,6 +185,14 @@ main{
     
 }
 
+a{
+    text-decoration: none;
+    font-family: 'Outfit';
+    font-size: 1rem;
+    color: var(--main-black);
+    padding-left: 1rem;
+}
+
 /*END ICONS*/
 
 .tweet__button{

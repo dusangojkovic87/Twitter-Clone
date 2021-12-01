@@ -13,6 +13,7 @@ const app = (0, express_1.default)();
 const homeRoute_1 = __importDefault(require("./Routes/homeRoute"));
 const loginRoute_1 = __importDefault(require("./Routes/loginRoute"));
 const registerRoute_1 = __importDefault(require("./Routes/registerRoute"));
+const logoutRoute_1 = __importDefault(require("./Routes/logoutRoute"));
 const PORT = 3000;
 app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.use(body_parser_1.default.json());
@@ -27,6 +28,7 @@ app.use((0, cookie_parser_1.default)());
 app.use("/", homeRoute_1.default);
 app.use("/login", loginRoute_1.default);
 app.use("/register", registerRoute_1.default);
+app.use("/logout", logoutRoute_1.default);
 /*db connection*/
 mongoose_1.default
     .connect("mongodb://localhost:27017/TwitterClone", {

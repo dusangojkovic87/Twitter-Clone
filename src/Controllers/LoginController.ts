@@ -9,6 +9,7 @@ export function getLoginPage(req:Request,res:Response){
 };
 
 export async function postLogin(req:Request,res:Response){
+   
     const {email,password} = req.body;
     if(validator.isEmpty(email) || validator.isEmpty(password)){
         res.render('login',{errorMessage:'fields cannot be empty!'});
