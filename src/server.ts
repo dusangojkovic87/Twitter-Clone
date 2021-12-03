@@ -5,6 +5,9 @@ import mongoose from "mongoose";
 import session from 'express-session';
 import cookieParser from "cookie-parser";
 import cors from 'cors';
+import moment from 'moment';
+
+
 
 declare module 'express-session' {
   interface SessionData {
@@ -25,7 +28,7 @@ import PostRoute from "./Routes/postRoute";
 
 
 
-
+app.locals.moment = moment;
 
 const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));

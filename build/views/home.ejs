@@ -55,13 +55,35 @@
         <button class="tweet__btn" type="submit" form="postForm">Tweet</button>
       </div>
       <div class="posts-container">
-          <%- include('./partials/post') %>
+        <% posts.forEach(function (post){ %>
+        <div class="post-container">
+          <div class="post-header-wrrapper">
+            <div class="profile-img-wrrapper">
+              <img src=<%= post.postedBy.profilePic %> alt=<%=post.postedBy.profilePic %> />
+            </div>
+            <p class="user__name"><%= post.postedBy.name %> <%= post.postedBy.surname %></p>
+            <p class="posted__date"><%= moment(post.createdAt, "YYYYMMDD").fromNow(); %></p>
+          </div>
+          <div class="post-text-wrrapper">
+            <p class="post__text"><%= post.content %></p>
+          </div>
+          <div class="post-interaction-wrrapper">
+            <span class="comment-post-icon"></span>
+            <span class="loop-post-icon"></span>
+            <span class="like-post-icon"></span>
+            <span class="upload-post-icon"></span>
+          </div>
+        </div>
+
+        <%});%>
       </div>
     </main>
     <aside>
       <h1>aside desni</h1>
     </aside>
-    <script>var exports = {"__esModule": true};</script>
+    <script>
+      var exports = { __esModule: true };
+    </script>
     <script src="/js/post.js"></script>
   </body>
 </html>

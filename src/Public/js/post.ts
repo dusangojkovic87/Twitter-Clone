@@ -1,5 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+  /*post tweet*/
   let postContent = document.querySelector(
     ".post__tweet__input"
   ) as HTMLInputElement;
@@ -16,9 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((res) => {
         if (res.success === true) {
           postContent.value = "";
+          window.location.reload();
           alert("posted succesfully!");
         }
       })
       .catch((err) => console.log(err));
   });
+
+
 });

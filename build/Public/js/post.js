@@ -1,5 +1,6 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
+    /*post tweet*/
     let postContent = document.querySelector(".post__tweet__input");
     let tweetBtn = document.querySelector(".tweet__btn");
     tweetBtn.addEventListener("click", (e) => {
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((res) => {
             if (res.success === true) {
                 postContent.value = "";
+                window.location.reload();
                 alert("posted succesfully!");
             }
         })

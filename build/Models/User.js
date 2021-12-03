@@ -11,7 +11,11 @@ exports.user = new mongoose_2.Schema({
     surname: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-});
+    profilePic: { type: String, default: "/images/default.png" },
+    coverPhoto: { type: String },
+    following: [{ type: mongoose_2.Schema.Types.ObjectId, ref: 'User' }],
+    followers: [{ type: mongoose_2.Schema.Types.ObjectId, ref: 'User' }]
+}, { timestamps: true });
 const User = mongoose_1.default.model('User', exports.user);
 exports.default = User;
 //# sourceMappingURL=User.js.map

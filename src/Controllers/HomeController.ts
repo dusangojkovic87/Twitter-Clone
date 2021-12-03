@@ -1,5 +1,8 @@
 import {Request,Response} from 'express';
+import Post from "../Models/Post";
 
-export = (req:Request,res:Response)=>{
-    res.render('home');
+
+export = async (req:Request,res:Response)=>{
+    let posts = await Post.find().populate('postedBy','-password').sort({createdAt:-1})
+    res.render('home',{posts:posts});
 }
