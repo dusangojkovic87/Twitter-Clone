@@ -272,6 +272,11 @@ form{
 .post-container{
     border: 1px solid var(--extra-light-grey);
     height:auto;
+    cursor: pointer;
+}
+
+.post-container:hover{
+    background-color: var(--most-light-grey);
 }
 
 .post-header-wrrapper{

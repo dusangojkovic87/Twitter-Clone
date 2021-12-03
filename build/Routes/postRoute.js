@@ -6,5 +6,6 @@ const PostController_1 = require("../Controllers/PostController");
 const express_1 = __importDefault(require("express"));
 let router = express_1.default.Router();
 router.post('/', PostController_1.postTweet);
+router.get('/:id', PostController_1.getPostById);
 module.exports = router;
 //# sourceMappingURL=postRoute.js.map

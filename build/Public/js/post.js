@@ -20,5 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .catch((err) => console.log(err));
     });
+    /*REDIRECT TO POST BY ID*/
+    let postContainers = document.querySelectorAll('.post-container');
+    postContainers.forEach((postContainer) => {
+        postContainer.addEventListener('click', (e) => {
+            let div = e.target;
+            if (div.classList.contains('post-container')) {
+                let postId = div.getAttribute('data-id');
+                window.location.href = `/post/${postId}`;
+            }
+        });
+    });
 });
 //# sourceMappingURL=post.js.map

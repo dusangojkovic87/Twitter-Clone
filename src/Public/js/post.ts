@@ -24,5 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.log(err));
   });
 
+  /*REDIRECT TO POST BY ID*/
+
+  let postContainers = document.querySelectorAll('.post-container') as NodeList;
+
+  postContainers.forEach((postContainer:Node)=>{
+    postContainer.addEventListener('click',(e:Event)=>{
+       let div = e.target as HTMLElement;
+       if(div.classList.contains('post-container')){
+         let postId = div.getAttribute('data-id');
+         window.location.href=`/post/${postId}`;
+       }
+    })
+
+  })
+
+  
+
 
 });

@@ -26,5 +26,12 @@ export function postTweet(req: Request, res: Response) {
 }
 
 
+export async function getPostById(req:Request,res:Response){
+  let post = await Post.findOne({_id: req.params.id});
+  res.render('post',{post:post});
+
+}
+
+
 
 

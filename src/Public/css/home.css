@@ -272,6 +272,8 @@ form{
 .post-container{
     border: 1px solid var(--extra-light-grey);
     height:auto;
+    cursor: pointer;
+    z-index: 2;
 }
 
 .post-header-wrrapper{
