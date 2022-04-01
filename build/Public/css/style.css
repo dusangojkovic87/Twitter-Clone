@@ -1,0 +1,89 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    font-family: "Outfit";
+}
+
+:root{
+    --main-blue:#1DA1F2;
+    --lighter-blue:#73c1f1;
+    --main-black:#14171A;
+    --dark-grey:#657786;
+    --light-grey:#AAB8C2;
+    --extra-light-grey:#E1E8ED;
+    --most-light-grey:#F5F8FA;
+    --danger:#df4759;
+    --transparent-grey:rgba(110, 105, 105, 0.5);
+    --light-blue:rgba(235, 250, 250, 0.5);
+}
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit-Regular.ttf');
+}
+
+/*ICONS*/
+.twitter-logo-icon{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url("/icons/twitterLogo.svg");
+    background-repeat: no-repeat;
+}
+
+.reply-modal-container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--transparent-grey);
+    z-index: 10;
+}
+
+.margin--top--2rem{
+    margin-top:1rem;
+}
+
+.reply-modal-wrrapper{
+    position: relative;
+    width: 600px;
+    height: 400px;
+    top: 2rem;
+    background-color: white;
+    border-radius: 5px;
+}
+/*util classes*/
+
+.close--reply--btn{
+    margin-top: 1rem;
+}
+
+.bg--grey{
+    background-color: #E1E8ED !important;
+}
+
+.bg--black{
+    background-color: #131313 !important;
+}
+
+.bg--blue{
+    background-color: var(--lighter-blue) !important;
+}
+
+.color--black{
+    color: black !important;
+}
+
+.color--white{
+    color: white !important;
+}
+
+.align--self--start{
+   align-self: flex-start !important;
+}
+
+.align--self--end{
+   align-self: flex-end !important;
+}

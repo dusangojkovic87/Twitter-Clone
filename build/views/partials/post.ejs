@@ -1,0 +1,33 @@
+<div class="post-container" data-id=<%= post._id %>>
+  <div class="post-header-wrrapper">
+    <div class="profile-img-wrrapper">
+      <img src=<%= post.postedBy.profilePic %>  />
+    </div>
+    <p class="user__name"><%= post.postedBy.name %> <%= post.postedBy.surname %></p>
+    <p class="posted__date"><%= moment(post.createdAt, "YYYYMMDD").fromNow(); %></p>
+  </div>
+  <% if(post.replyTo != null){ %>
+    <div class="repling-to-wrrapper">
+      <p>replying to </p><a href="#"><%= post.replyToUser.name %> <%= post.replyToUser.surname %></a>
+    </div>
+  <% } %>
+  <div class="post-text-wrrapper">
+    <p class="post__text" ><%= post.content %></p>
+  </div>
+  <div class="post-interaction-wrrapper">
+    <div class="post-icon-wrrapper">
+          <span class="comment-post-icon" data-postId=<%= post._id %>></span>
+          <span class="comment-count" data-postId=<%= post._id %>><%= post.replyCount %></span>
+    </div>
+    <div class="post-icon-wrrapper">
+        <span class="loop-post-icon" data-userId=<%= post.postedBy._id %> data-postId=<%= post._id %> ></span>
+    </div>
+    <div class="post-icon-wrrapper">
+      <span class="like-post-icon" data-postId=<%= post._id %>></span>
+      <span class="like-count" data-postId=<%= post._id %>> <%= post.likes.length %> </span>
+    </div>
+    <div class="post-icon-wrrapper">
+        <span class="upload-post-icon"></span>
+    </div>
+  </div>
+</div>

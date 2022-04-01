@@ -1,0 +1,558 @@
+.back__icon{
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/profile/back.svg");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: -4px;
+    border:5px solid transparent;
+    background-color: transparent;
+}
+
+.back__icon:hover{
+    border: 5px solid var(--extra-light-grey);
+    border-radius: 50%;
+    background-color: var(--extra-light-grey);
+   
+}
+
+.user-name-container{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.user-name-wrrapper{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-name-wrrapper p{
+    margin-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height:12px;
+}
+
+.user__name{
+    position: relative;
+    margin-left: 1rem;
+}
+
+.tweet__number{
+    color: var(--dark-grey);
+}
+
+.profile-img-container{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.profile-img-container{
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.profile-img-container .bg__img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-main{
+    position: absolute;
+    width:7rem;
+    height:7rem;
+    background-color: var(--dark-grey);
+    border-radius: 50%;
+    bottom:-2rem;
+    margin-left: 1rem;
+}
+
+.profile-main img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.edit-profile,
+.following-wrrapper
+{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.edit-btn-wrrapper,
+.follow-btn-wrrapper
+{
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid var(--extra-light-grey);
+    right: 3rem;
+    width:110px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2px;
+
+}
+
+.edit-btn-wrrapper:hover{
+    background-color: var(--extra-light-grey);
+}
+.edit__profile__btn,
+.follow__btn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: "Outfit";
+    font-size: 1rem;
+    color: var(--main-black);
+}
+
+.follow-btn-wrrapper{
+    width:80px;
+    background-color: var(--main-black);
+}
+
+.follow__btn{
+    color: white;
+    font-size: 1rem;
+}
+
+
+
+
+/* Edit profile modal*/
+.edit-profile-modal-container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: var(--transparent-grey);
+    display: none;
+    justify-content: center;
+    z-index: 4;
+    align-items: flex-start;
+    
+}
+
+
+.edit-profile-modal{
+    top: 1.4rem;
+    position: absolute;
+    width: 50%;
+    height: 600px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: scroll;
+}
+
+.edit-profile-heading{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height:40px;
+    background-color: white;
+    z-index: 2;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+
+}
+
+.edit-profile-heading > div{
+    position: relative;
+    display: flex;
+    width: 160px;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-profile-heading p{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.close__icon{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("/icons/profile/close.svg");
+    background-repeat: no-repeat;
+    display: block;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.save__edit__btn{
+    position: relative;
+    margin-right: 1rem;
+    background-color: var(--main-black);
+    color: white;
+    font-family: "Outfit";
+    font-size: 1rem;
+    border-radius:9999px;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bg-image-edit{
+    position: relative;
+    top:0px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image-edit > img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-profile-img-edit{
+    position: absolute;
+    left: 30px;
+    top: 120px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-profile-img-edit img{
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.camera__icon{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: url("/icons/profile/camera.svg");
+    background-repeat: no-repeat;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.upload-bg-img-modal,.upload-profile-img-modal{
+    position: absolute;
+    top: 4rem;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    z-index: 4;
+    left: 35%;
+    right: 35%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--main-black);
+}
+
+.upload-bg-img-modal .bg-preview-wrrapper{
+    position: relative;
+    top:-10px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.upload-profile-img-modal .profile-preview-wrrapper{
+    position: relative;
+    top:-10px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+}
+
+.bg__preview{
+    position: absolute;
+    max-width: 100%;
+    height: 270px;
+    bottom: 0;
+}
+
+.profile__preview{
+    position: absolute;
+    max-width: 100%;
+    height: 270px;
+    bottom: 0;
+    top: 1rem;
+}
+.upload-profile-img-modal > div{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-content: flex-end;
+    margin-right: 1rem;
+}
+
+.upload-bg-img-modal > div{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.upload-bg-img-modal .crop-commands-wrrapper{
+    position: relative;
+    top:-7px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.crop-commands-wrrapper button{
+    position: relative;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 2rem;
+    background-color: var(--main-black);
+    color: white;
+    font-family: "Outfit";
+    font-size: 1rem;
+    border-radius:20px;
+    
+}
+
+.user-info-wrrapper{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    top: 3rem;
+}
+
+.user-info-wrrapper form{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info-wrrapper form label{
+    position: relative;
+    left: 1rem;
+    font-family: "Outfit";
+    font-size: 1rem;
+    color: var(--dark-grey);
+}
+
+.user-info-wrrapper form input{
+    margin: 1rem;
+    height: 40px;
+    border:1px solid var(--dark-grey);
+    border-radius: 4px;
+    outline: none;
+}
+
+.user-info-wrrapper form input[type=date]{
+  padding: 2px;
+  color: var(--dark-grey);
+  outline: none;
+}
+
+.date-wrrapper{
+    position: relative;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    margin-top: 1rem;
+}
+
+.profile-followers-container h6{
+    color: var(--dark-grey);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.date__icon{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/profile/date.svg");
+    background-repeat: no-repeat;
+    display: block;
+    margin-right: 1rem;
+}
+
+.profile__joined__date{
+    position: relative;
+    top: -1rem;
+    color: var(--dark-grey);
+}
+
+.followers-wrrapper{
+    position: relative;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    margin-top:5px;
+}
+
+.followers-wrrapper p{
+    margin: 1rem;
+    color: var(--dark-grey);
+}
+
+.profile-tweet-menu-container{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.profile-tweet-menu{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin-top:1.5rem;
+}
+
+.profile-tweet-menu li{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    font-family: "Outfit";
+    color: var(--dark-grey);
+}
+
+.profile-tweet-menu li a{
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.profile-tweet-menu li:hover{
+    color: var(--main-black);
+    background-color: var(--extra-light-grey);
+}
+
+.activeTweetMenu{
+    border-bottom: 2px solid var(--main-blue);
+}
+
+.empty__profile__text{
+    position: relative;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--main-black);
+}
+
+.dots-icon{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: url("/icons/profile/dots.svg");
+    background-repeat: no-repeat;
+    margin: 2px;
+}
+
+.delete-post-wrrapper{
+    position: relative;
+    height:35px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.delete-tweet-modal{
+    position: relative;
+    width: 200px;
+    height:40px;
+    border: 1px solid var(--extra-light-grey);
+    padding:5px;
+    border-radius:4px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--extra-light-grey);
+    z-index: 2;
+}
+
+.delete-tweet-modal button{
+    width: auto;
+    height: 20px;
+    border: none;
+    color: white;
+    padding:15px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.delete__tweet__btn{
+    background-color: var(--danger);
+}
+
+.cancel__delete__tweet{
+    background-color: var(--main-blue); 
+}
+
+.open--delete--modal{
+    display: flex;
+}

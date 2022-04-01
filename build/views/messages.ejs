@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/messages.css" />
+    <link rel="stylesheet" href="/css/searchUser.css" />
+    <title>Twitter Clone</title>
+  </head>
+  <body>
+    <%- include('partials/navigation') %>
+    <main>
+      <div class="message-search-user-container">
+        <div class="msg-text-wrrapper">
+          <h1>Messages</h1>
+        </div>
+        <div class="search-group-wrrapper">
+          <span class="search-user-icon"></span>
+          <input
+            type="text"
+            name="searchPeopleChat"
+            id="searchPeopleChat"
+            placeholder="search for people"
+          />
+        </div>
+        <!-- search result load-->
+        <div class="show-search-result-container">
+          <ul class="search-result"></ul>
+        </div>
+      </div>
+      <div class="chat-container">
+        <!-- selected user to chat load -->
+        <div class="user-to-chat-wrrapper"></div>
+        <!-- selected user to chat end -->
+        <div class="typing-chat-wrrapper">
+          <div class="chat-wrrapper">
+            <input
+              type="text"
+              name="chat"
+              id="chatInput"
+              placeholder="start a new message"
+            />
+            <span class="plane-icon"></span>
+          </div>
+        </div>
+        <div class="message-container"></div>
+      </div>
+    </main>
+    <script>
+      var exports = { __esModule: true };
+    </script>
+    <script src="/js/message.js"></script>
+    <script src="/js/navigation.js"></script>
+  </body>
+</html>

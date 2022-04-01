@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <link rel="stylesheet" href="/css/post.css" />
+    <link rel="stylesheet" href="/css/searchUser.css" />
+    <title>Twitter Clone</title>
+  </head>
+  <body>
+    <!--reply modal-->
+    <div class="reply-modal-container"></div>
+    <!--reply modal end-->
+    <%- include('partials/navigation') %>
+     <!-- edit profile modal-->
+     <div class="edit-profile-modal-container">
+        <!-- upload bg image modal-->
+        <div class="upload-bg-img-modal">
+          <div>
+            <span class="close__icon close__add__bg"></span>
+          </div>
+          <p>Select background:</p>
+          <form id="bgImageForm" action="/profile/background" method="post" enctype="multipart/form-data">
+             <input id="bgImgInput" type="file" name="bgImage">
+          </form>
+          <div class="bg-preview-wrrapper">
+            <img class="bg__preview" src=<%= user.bgImage %> alt=<%= user.bgImage %>>
+          </div>
+          <div class="crop-commands-wrrapper">
+            <div> <button form="bgImageForm" type="submit" class="save__crop__btn">save</button> </div>           
+          </div>    
+     </div>
+      <!-- upload bg image modal end-->
+      <!-- upload profile img modal -->
+      <div class="upload-profile-img-modal">
+        <div>
+          <span class="close__icon close__add__profile"></span>
+        </div>
+        <p>Select profile image:</p>
+        <form id="profileImageForm" action="/profile/profilePic" method="post" enctype="multipart/form-data">
+           <input id="profileImageInput" type="file" name="profilePic">
+        </form>
+        <div class="profile-preview-wrrapper">
+          <img class="profile__preview" src=<%= user.profilePic %> alt=<%= user.profilePic %>>
+        </div>
+        <div class="crop-commands-wrrapper">
+          <div> <button form="profileImageForm" type="submit" class="save__crop__btn">save</button> </div>           
+        </div>
+   </div>
+   <!-- upload profile img modal end-->
+      <div class="edit-profile-modal">
+          <div class="edit-profile-heading">
+             <div>
+                <span class="close__icon close__edit__modal"></span>
+                <p>Edit profile</p>
+             </div>
+              <button form="editProfileForm" type="submit" class="save__edit__btn">Save</button>
+          </div>
+          <div class="bg-image-edit">
+               <span class="camera__icon add--bg--image"></span>
+               <img src=<%= user.bgImage %> alt=<%= user.bgImage %>>
+               <div class="main-profile-img-edit">
+                <span class="camera__icon add--main--img"></span>
+                  <img src=<%= user.profilePic %> alt=<%= user.profilePic %>>
+               </div>
+           </div>
+           <div class="user-info-wrrapper">
+            <form id="editProfileForm" >
+                    <label for="name">Name:</label>
+                    <input class="user__name__info" type="text" name="name">
+                    <label for="surname">Surname:</label>
+                    <input class="user__surname__info" type="text" name="surname">
+                    <label for="bio">Bio:</label>
+                    <input class="user__bio__info" type="text" name="bio">
+                    <label for="location">Location:</label>
+                    <input class="user__location__info" type="text" name="location">
+                    <label for="birthdate">Birthdate:</label>
+                    <input class="user__birthdate__info" type="date" name="birthdate">
+            </form>
+          </div>
+      </div>
+   </div>
+   <!-- edit profile modal end-->
+    <main>
+      <!-- username heading and back btn -->
+      <div class="user-name-container">
+        <span class="back__icon"></span>
+        <div class="user-name-wrrapper">
+          <p class="user__name"><%= user.name %> <%= user.surname %></p>
+          <p class="tweet__number"><%= tweetCount %> tweets</p>
+        </div>
+      </div>
+       <!-- end username heading -->
+        <!--profile images -->
+      <div class="profile-img-container">
+        <img class="bg__img" src=<%= user.bgImage %> alt=<%= user.bgImage %> />
+        <div class="profile-main">
+            <img src=<%= user.profilePic %> alt=<%= user.profilePic %> />
+        </div>
+      </div>
+      <div class="edit-profile">
+          <div class="edit-btn-wrrapper">
+              <button class="edit__profile__btn">Edit profile</button>
+          </div>
+      </div>
+    <!-- end profile images-->
+    <div class="profile-followers-container">
+          <h6><%= user.name %> <%= user.surname%></h6>
+          <div class="date-wrrapper">
+                <span class="date__icon"></span>
+                <p class="profile__joined__date"> Joined: <%= moment(user.createdAt).format("LL") %></p>
+          </div>
+          <div class="followers-wrrapper">
+                <p> <%= user.followers.length == 0 ? 0 : user.followers.length %> Followers</p>
+                <p> <%= user.following.length == 0 ? 0 : user.following.length %> Following</p>
+          </div>
+    </div> 
+    <div class="profile-tweet-menu-container">
+        <ul class="profile-tweet-menu">
+             <li><a class="tweet__menu__nav" href="#tweets">Tweets</a></li>
+             <li><a class="tweet__menu__nav" href="#replies">Tweets & replies</a></li>
+             <li><a class="tweet__menu__nav" href="#media">Media</a></li>
+             <li><a class="tweet__menu__nav" href="#likes">likes</a></li>
+        </ul>
+        <div class="profile-tweet-content">
+            <div class="myTweet-wrrapper">  
+            </div>
+        </div>
+    </div>
+    </main>
+    <aside>
+       <%- include('partials/searchUsers') %>
+    </aside>
+    <script>
+      var exports = { __esModule: true };
+    </script>
+   <script src="/plugins/moment/min/moment.min.js"></script>
+   <script src="/js/profile.js"></script>
+   <script src="/js/post.js"></script>
+   <script src="/js/searchUsers.js"></script>
+   <script src="/js/navigation.js"></script>
+  
+   
+  
+  </body>
+</html>

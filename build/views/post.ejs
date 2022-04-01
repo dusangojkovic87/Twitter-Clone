@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/post.css" />
+    <title>Twitter Clone</title>
+  </head>
+  <body>
+    <%- include('partials/navigation') %>
+    <main>
+      <div class="posts-container">
+        <%- include('partials/post',{post:post}) %>
+      </div>
+      <div class="reply-container">
+        <div class="replying-to-wrrapper">
+          <p>
+            replying to
+            <a class="profile__link" href="#"><%= post.postedBy.name %> <%= post.postedBy.surname %>
+            </a>
+          </p>
+        </div>
+        <div class="reply-img-wrrapper">
+          <img src= <%= user ? user.profilePic : '' %> />
+        </div>
+        <form
+          class="reply__form"
+          action="/post/<%= post._id %>/<%= post.postedBy._id %>"
+          method="post"
+        >
+          <textarea
+            name="reply"
+            id="reply__input"
+            cols="30"
+            rows="10"
+            placeholder="Tweet your reply"
+            style="overflow: hidden"
+          ></textarea>
+          <button type="submit" class="reply__btn">Reply</button>
+        </form>
+      </div>
+      <div class="replyies">
+        <% replies.forEach(function (reply){ %> 
+        <%-include('partials/post',{post:reply}) %> <% }) %>
+      </div>
+    </main>
+    <aside>
+      <h1>aside desni</h1>
+    </aside>
+    <script>
+      var exports = { __esModule: true };
+    </script>
+    <script src="/js/post.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/navigation.js"></script>
+  </body>
+</html>

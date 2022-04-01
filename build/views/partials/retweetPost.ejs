@@ -1,0 +1,33 @@
+<div class="post-container" data-id=<%= post.originalTweet._id %>>
+    <div class="post-header-wrrapper">
+      <div class="profile-img-wrrapper">
+        <img src=<%= post.originalTweetSender.profilePic %>  />
+      </div>
+      <p class="user__name"><%= post.originalTweetSender.name %> <%= post.originalTweetSender.surname %></p>
+      <p class="posted__date"><%= moment(post.createdAt, "YYYYMMDD").fromNow(); %></p>
+    </div>
+    <% if(post.originalTweet.replyTo != null){ %>
+      <div class="repling-to-wrrapper">
+        <p>replying to </p><a href="#"><%= post.originalTweet.replyToUser.name %> <%= post.originalTweet.replyToUser.surname %></a>
+      </div>
+    <% } %>
+    <div class="post-text-wrrapper">
+      <p class="post__text" ><%= post.originalTweet.content %></p>
+    </div>
+    <div class="post-interaction-wrrapper">
+      <div class="post-icon-wrrapper">
+            <span class="comment-post-icon" data-postId=<%= post.originalTweet._id %>></span>
+            <span class="comment-count" data-postId=<%= post.originalTweet._id %>><%= post.originalTweet.replyCount %></span>
+      </div>
+      <div class="post-icon-wrrapper">
+          <span class="loop-post-icon" data-userId=<%= post.originalTweet.postedBy._id %> data-postId=<%= post.originalTweet._id %> ></span>
+      </div>
+      <div class="post-icon-wrrapper">
+        <span class="like-post-icon" data-postId=<%= post.originalTweet._id %>></span>
+        <span class="like-count" data-postId=<%= post._id %>> <%= post.originalTweet.likes.length %> </span>
+      </div>
+      <div class="post-icon-wrrapper">
+          <span class="upload-post-icon"></span>
+      </div>
+    </div>
+  </div>
