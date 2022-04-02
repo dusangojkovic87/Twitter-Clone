@@ -19,6 +19,7 @@ main{
     height: 100%;
 }
 
+/*navigation css*/
 .main-navigation-container{
     position: relative;
     display: flex;
@@ -61,6 +62,12 @@ main{
     font-size: 1rem;
     font-family: 'Outfit';
     
+}
+
+.main-navigation-wrrapper ul li a{
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .icon-wrrapper{
@@ -129,6 +136,14 @@ main{
     background: url("/icons/message.svg");
     background-repeat: no-repeat;
 
+}
+
+.feather-icon{
+    position: relative;
+    display: none;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/feather.svg");
 }
 
 .profile-page-logo-icon{
@@ -467,3 +482,55 @@ form{
     font-size: 1rem;
 }
 
+/*navigation responsive css*/
+
+@media only screen and (max-width:768px){
+    aside{
+        width: 70px;
+    }
+
+
+    .main-navigation-wrrapper{
+        width: 70px;
+        align-items: center;
+    }
+
+    .main-navigation-wrrapper ul li a{
+        padding-left: 0;
+    }
+
+
+    .main-navigation-wrrapper ul li a p{
+        display: none;
+    }
+
+    .main-navigation-wrrapper ul li:hover{
+        background-color: transparent;
+    }
+
+    .tweet__button{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-top: 0;
+    }
+
+    .tweet__button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .feather-icon{
+        display: block;
+    }
+
+    .tweet__btn__txt{
+        display: none;
+    }
+
+    span.feather-icon{
+        margin: 0.;
+    }
+
+}
