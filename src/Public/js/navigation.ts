@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded",() =>{
             setMessageNotification();
         }
     })
+
+
+    openPostTweetModalListener();
+    closePostTweetModalListener();
     
 });
 
@@ -41,5 +45,35 @@ function getCookie(cookiename: string) {
       !!cookiestring ? cookiestring.toString().replace(/^[^=]+./, "") : ""
     );
   }
+
+//post tweet modal
+function openPostTweetModalListener(){
+  let navigationWrrapper = document.querySelector(".main-navigation-wrrapper") as HTMLElement;
+  let modal = document.querySelector(".post-tweet-modal-container") as HTMLElement;
+
+  navigationWrrapper.addEventListener("click",(e:Event) =>{
+      let el = e.target as HTMLElement;
+      if(el.classList.contains("tweet__button")){
+          modal.style.display = "flex";
+          
+      }
+
+  })
+}
+
+function closePostTweetModalListener(){
+    let modal = document.querySelector(".post-tweet-modal-container") as HTMLElement;
+    document.addEventListener("click",(e:Event) =>{
+        let el = e.target as HTMLElement;
+        if(el.classList.contains("close__modal")){
+            modal.style.display = "none";
+
+        }
+
+    });
+}
+
+
+
 
   

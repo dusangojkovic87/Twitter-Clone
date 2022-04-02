@@ -9,9 +9,23 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/searchUser.css" />
+    <link rel="stylesheet" href="/css/tweetModal.css" />
     <title>Twitter Clone</title>
   </head>
   <body>
+    <!-- post tweet modal -->
+    <div class="post-tweet-modal-container">
+      <div class="post-tweet-modal">
+        <span class="close-icon close__modal"></span>
+         <form>
+            <input id="tweetInput" type="text" name="tweet" placeholder="What's happening?">
+         </form>
+          <button class="submit__tweet__btn">Tweet</button>
+      </div>
+
+  </div>
+ <!-- post tweet modal end-->
+
     <%- include('partials/navigation') %>
     <!--reply modal-->
     <div class="reply-modal-container"></div>
