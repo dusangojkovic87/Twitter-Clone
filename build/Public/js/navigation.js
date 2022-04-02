@@ -2244,6 +2244,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     openPostTweetModalListener();
     closePostTweetModalListener();
+    postTweetFromModal();
 });
 function setNotificationCounter() {
     let notificationCounter = document.querySelector(".notification__counter");
@@ -2284,6 +2285,34 @@ function closePostTweetModalListener() {
             modal.style.display = "none";
         }
     });
+}
+function postTweetFromModal() {
+    document.addEventListener("click", (e) => {
+        let el = e.target;
+        if (el.classList.contains("submit__tweet__btn")) {
+            let tweetInput = document.querySelector("#tweetInput");
+            fetch("/post", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ content: tweetInput.value })
+            })
+                .then((res) => res.json())
+                .then((res) => {
+                clearModalInputAndClose();
+            })
+                .catch((err) => {
+                if (err) {
+                    console.log(err);
+                }
+            });
+        }
+    });
+}
+function clearModalInputAndClose() {
+    let modal = document.querySelector(".post-tweet-modal-container");
+    modal.style.display = "none";
+    let tweetInput = document.querySelector("#tweetInput");
+    tweetInput.value = "";
 }
 
 },{"socket.io-client":30}],6:[function(require,module,exports){

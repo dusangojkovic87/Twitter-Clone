@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded",() =>{
 
     openPostTweetModalListener();
     closePostTweetModalListener();
+    postTweetFromModal();
     
 });
 
@@ -72,6 +73,42 @@ function closePostTweetModalListener(){
 
     });
 }
+
+function postTweetFromModal(){
+    document.addEventListener("click",(e:Event) =>{
+        let el = e.target as HTMLElement;
+        if(el.classList.contains("submit__tweet__btn")){
+            let tweetInput = document.querySelector("#tweetInput") as HTMLInputElement;
+            fetch("/post",{
+                method:"POST",
+                headers:{'Content-Type': 'application/json'},
+                body:JSON.stringify({content:tweetInput.value})
+            })
+            .then((res) => res.json())
+            .then((res) =>{
+                clearModalInputAndClose();
+              
+            })
+            .catch((err) =>{
+                if(err){
+                    console.log(err);
+                }
+            })
+
+        }
+
+    });
+}
+
+function clearModalInputAndClose(){
+    let modal = document.querySelector(".post-tweet-modal-container") as HTMLElement;
+    modal.style.display = "none";
+    let tweetInput = document.querySelector("#tweetInput") as HTMLInputElement;
+    tweetInput.value = "";
+
+
+}
+
 
 
 
